@@ -1,6 +1,7 @@
 import settings
 import torch
 import torchvision
+import clip
 
 
 def noop(*args, **kwargs):
@@ -14,7 +15,9 @@ def loadmodel(
     pretrained_override=None,
 ):
     device = torch.device("cuda" if settings.GPU else "cpu")
-    model_fn = torchvision.models.__dict__[settings.MODEL]
+    model, preprocess = clip.load("ViT-B/32", device=device)
+    #model_fn = torchvision.models.__dict__[settings.MODEL]
+    
 
     if settings.MODEL_FILE is None:
         model = model_fn(
