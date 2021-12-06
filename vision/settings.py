@@ -37,9 +37,9 @@ SEMANTIC_CONSISTENCY = False  # Evaluate semantic consistency of formulas
 
 # Beam search params
 FORMULA_COMPLEXITY_PENALTY = 1.00  # How much to downweight formulas by their length
-BEAM_SEARCH_LIMIT = None  # (artificially) limit beam to this many candidates. If beam search takes a while, setting this to e.g. 50 can get you reasonably good explanations in much less time.
+BEAM_SEARCH_LIMIT = 20  # (artificially) limit beam to this many candidates. If beam search takes a while, setting this to e.g. 50 can get you reasonably good explanations in much less time.
 BEAM_SIZE = 5  # Size of the beam when doing formula search
-MAX_FORMULA_LENGTH = 3  # Maximum compositional formula length
+MAX_FORMULA_LENGTH = 1  # Maximum compositional formula length
 
 # Final layer vis params
 TREE_MAXDEPTH = 4  # Index tree depth
