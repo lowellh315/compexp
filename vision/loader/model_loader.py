@@ -16,6 +16,7 @@ def loadmodel(
 ):
     device = torch.device("cuda" if settings.GPU else "cpu")
     model, preprocess = clip.load("ViT-B/32", device=device)
+    return model
     #model_fn = torchvision.models.__dict__[settings.MODEL]
     
 
